@@ -1,0 +1,8 @@
+### Rider ###
+# Covers JetBrains IDEs: IntelliJ
+.idea/
+
+### DotnetCore ###
+# .NET Core build folders
+**/obj/
+**/bin/
