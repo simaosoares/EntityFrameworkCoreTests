@@ -8,6 +8,7 @@ Table of contents:
 * [Project List](#project-list)
     * [EntityFrameworkCoreTests.Data](#entityframeworkcoretestsdata)
     * [EntityFrameworkCoreTests.Services](#entityframeworkcoretestsservices)
+    * [EntityFrameworkCoreTests.Tests](#entityframeworkcoreteststests)    
 * [Build Solution](#build-solution)
 * [Test Solution](#test-solution)
 * [References](#references)
@@ -76,12 +77,62 @@ The file `EntityFrameworkCoreTests.Services.csproj` is updated with the required
 </Project>
 ```
 
+### EntityFrameworkCoreTests.Tests
+
+This project contains the application persistence and services unit tests for the libraries `EntityFrameworkCoreTests.Data` and `EntityFrameworkCoreTests.Services` using the `XUnit` unit testing tool combined with an in-memory database.
+
+Type the following steps to add the `EntityFrameworkCoreTests.Tests` project to the existing solution.
+
+```
+dotnet new xunit -n EntityFrameworkCoreTests.Tests
+dotnet sln add EntityFrameworkCoreTests.Tests
+```
+
+The following commands will add the required project dependencies:
+
+```
+dotnet add reference ../EntityFrameworkCoreTests.Data/EntityFrameworkCoreTests.Data.csproj
+dotnet add reference ../EntityFrameworkCoreTests.Services/EntityFrameworkCoreTests.Services.csproj
+```
+
+The InMemory provider is useful to test components using something that approximates connecting to the real database, without the overhead of actual database operations.
+
+
+> EF Core database providers do not have to be relational databases. InMemory is designed to be a general purpose database for testing, and is not designed to mimic a relational database.
+
+* InMemory will allow you to save data that would violate referential integrity constraints in a relational database.
+* If you use DefaultValueSql(string) for a property in your model, this is a relational database API and will have no effect when running against InMemory.
+
+
+The following command will add the required package to run our tests with an in-memory database.
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.InMemory -v 2.2.6
+```
+
+
+The following command will add the required package to run our tests with a relational database `Sqlite` that will be configured to run as in-memory data source.
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+```
+ 
+```c#
+// ...
+new SqliteConnection("DataSource=:memory:");
+// ...
+```
+
 ## Build Solution
 
 ```
 dotnet clean
 dotnet build
 ```
+
+## Test Solution
+
+Type the following command to run the solution unit tests:   
 
 ```
 dotnet test
@@ -93,3 +144,8 @@ dotnet test
 * https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
 * https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package
 * https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference
+* https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory
+* https://docs.microsoft.com/en-us/ef/core/providers/in-memory/
+* https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.InMemory/
+* https://xunit.net/#projects
+* https://www.meziantou.net/testing-ef-core-in-memory-using-sqlite.htm

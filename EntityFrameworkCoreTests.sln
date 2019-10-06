@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreTests.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreTests.Services", "EntityFrameworkCoreTests.Services\EntityFrameworkCoreTests.Services.csproj", "{05CA3146-8BE4-4E26-A593-8C8518C11400}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreTests.Tests", "EntityFrameworkCoreTests.Tests\EntityFrameworkCoreTests.Tests.csproj", "{C06ED503-3982-4C05-A8F3-D2DE09199B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{05CA3146-8BE4-4E26-A593-8C8518C11400}.Release|x64.Build.0 = Release|Any CPU
 		{05CA3146-8BE4-4E26-A593-8C8518C11400}.Release|x86.ActiveCfg = Release|Any CPU
 		{05CA3146-8BE4-4E26-A593-8C8518C11400}.Release|x86.Build.0 = Release|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Debug|x64.Build.0 = Debug|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Debug|x86.Build.0 = Debug|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Release|x64.ActiveCfg = Release|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Release|x64.Build.0 = Release|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Release|x86.ActiveCfg = Release|Any CPU
+		{C06ED503-3982-4C05-A8F3-D2DE09199B54}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
